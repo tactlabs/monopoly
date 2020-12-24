@@ -3,8 +3,27 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> -->
+
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 		<link rel="stylesheet" href="styles/main.css">
+
+		<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+
+		<style>
+
+			.user1_coin {
+				background-color: green;
+				width: 25px;
+				height: 25px;
+				margin: 10px;
+				color:white;
+				padding:5px;
+				border-radius: 25px;
+			}
+
+		</style>
 	</head>
 	<body>
 		<div class="table">
@@ -16,13 +35,13 @@
 					</div>
 					<h1 class="title">MONOPOLY</h1>
 					<div class="chance-deck">
-						<h2 class="label">Chance</h2>
+						<h2 class="label">Chance (inside)</h2>
 						<div class="deck"></div>
 					</div>
 				</div>
 
 				<div class="space corner go">
-					<div class="container">
+					<div class="container" id="00_go">
 						<div class="instructions">Collect $200.00 salary as you pass</div>
 						<div class="go-word">go</div>
 					</div>
@@ -31,62 +50,66 @@
 
 				<div class="row horizontal-row bottom-row">
 					<div class="space property">
-						<div class="container">
+						<div class="container" id="09_connecticut">
 							<div class="color-bar light-blue"></div>
-							<div class="name">Connecticut Avenue</div>
+							<div class="name" id="">
+								Connecticut Avenue
+
+								
+							</div>
 							<div class="price">PRICE $120</div>
 						</div>
 					</div>
 					<div class="space property">
-						<div class="container">
+						<div class="container" id="08_vermont">
 							<div class="color-bar light-blue"></div>
 							<div class="name">Vermont Avenue</div>
 							<div class="price">Price $100</div>
 						</div>
 					</div>
 					<div class="space chance">
-						<div class="container">
-							<div class="name">Chance</div>
+						<div class="container" id="07_chance">
+							<div class="name">Chance (1)</div>
 							<i class="drawing fa fa-question"></i>
 						</div>
 					</div>
 					<div class="space property">
-						<div class="container">
+						<div class="container" id="06_oriental">
 							<div class="color-bar light-blue"></div>
 							<div class="name">Oriental Avenue</div>
 							<div class="price">Price $100</div>
 						</div>
 					</div>
 					<div class="space railroad">
-						<div class="container">
+						<div class="container" id="05_reading_railroad">
 							<div class="name">Reading Railroad</div>
 							<i class="drawing fa fa-subway"></i>
 							<div class="price">Price $200</div>
 						</div>
 					</div>
 					<div class="space fee income-tax">
-						<div class="container">
+						<div class="container" id="04_income_tax">
 							<div class="name">Income Tax</div>
 							<div class="diamond"></div>
 							<div class="instructions">Pay 10%<br>or<br>$200</div>
 						</div>
 					</div>
 					<div class="space property">
-						<div class="container">
+						<div class="container" id="03_baltic">
 							<div class="color-bar dark-purple"></div>
 							<div class="name">Baltic Avenue</div>
 							<div class="price">Price $50</div>
 						</div>
 					</div>
 					<div class="space community-chest">
-						<div class="container">
-							<div class="name">Community Chest</div>
+						<div class="container" id="02_community_chest">
+							<div class="name">Community Chest (1)</div>
 							<i class="drawing fa fa-cube"></i>
 							<div class="instructions">Follow instructions on top card</div>
 						</div>
 					</div>
 					<div class="space property">
-						<div class="container">
+						<div class="container" id="01_mediterranean">
 							<div class="color-bar dark-purple"></div>
 							<div class="name three-line-name">Mediter-<br>ranean<br>Avenue</div>
 							<div class="price">Price $50</div>
@@ -97,7 +120,7 @@
 				<div class="space corner jail">
 					<div class="just">Just</div>
 					<div class="drawing">
-						<div class="container">
+						<div class="container" id="10_jail">
 							<div class="name">In</div>
 							<div class="window">
 								<div class="bar"></div>
@@ -105,7 +128,7 @@
 								<div class="bar"></div>
 								<i class="person fa fa-frown-o"></i>
 							</div>
-							<div class="name">Jail</div>
+							<div class="name">Jail (1)</div>
 						</div>
 					</div>
 					<div class="visiting">Visiting</div>
@@ -195,7 +218,7 @@
 					</div>
 					<div class="space chance">
 						<div class="container">
-							<div class="name">Chance</div>
+							<div class="name">Chance (2)</div>
 							<i class="drawing fa fa-question blue"></i>
 						</div>
 					</div>
@@ -296,7 +319,7 @@
 					</div>
 					<div class="space chance">
 						<div class="container">
-							<div class="name">Chance</div>
+							<div class="name">Chance (3)</div>
 							<i class="drawing fa fa-question"></i>
 						</div>
 					</div>
@@ -322,7 +345,100 @@
 						</div>
 					</div>
 				</div>
+
+				
+				<div>
+					<button type="button" id="user_button" class="btn btn-primary">Move</button>
+				</div>
 			</div>
+
+			
 		</div>
+
+		
 	</body>
+
+<script>
+$(document).ready(function(){
+	// $("p").click(function(){
+    // 	$(this).hide();
+	  // });
+	  
+	colog = console.log;
+
+	// colog('test');
+
+	// create user1_coin
+
+	var boxes = [
+	
+		"00_go",
+
+		"01_mediterranean",
+
+
+
+
+		"02_community_chest",
+
+
+
+
+		"03_baltic",
+
+
+
+
+
+
+		"04_income_tax",
+
+
+
+
+
+		"05_reading_railroad",
+
+
+
+
+		"06_oriental",
+
+
+
+		"07_chance",
+
+
+
+
+		"08_vermont",
+
+
+
+		"09_connecticut",
+
+
+		"10_jail",
+
+	];
+
+	// colog(boxes);
+
+	$("#user_button").click(function(){
+    	move_coin();
+	});
+	
+	var user1_coin_div = '<div class="user1_coin">RJ</div>';
+	$("#" + boxes[0]).append(user1_coin_div);
+
+	var currentBoxIndex = 0;
+	function move_coin(){
+		$("#"+boxes[currentBoxIndex]+" .user1_coin").remove();
+		
+		currentBoxIndex += 1;
+		$("#"+boxes[currentBoxIndex]+"").append(user1_coin_div);
+	}
+
+});
+</script>
 </html>
